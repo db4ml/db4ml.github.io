@@ -19,7 +19,7 @@ real-world datasets. Maybe the most widely used example of such a model is the *
 revolves around the concept of a **relation (or table)** at its core. For example, a relation representing the above cow dataset 
 might look like this:
 
-| Cow ID | Weight (kg) | Age (years) | Height (cm) | Stomach temp ]
+| CowID | Weight(kg) | Age(years) | Height(cm) | Stomach_temp |
 |--------|------------|-------------|-------------|------------|
 | Zenzi  | 100        | 4           | 100         | 25  |
 | Berta   | 140        | 3           | 130         |23  |
