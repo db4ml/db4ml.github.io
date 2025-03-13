@@ -51,3 +51,36 @@ CREATE TABLE Locations (
     latitude REAL NOT NULL,
     longitude REAL NOT NULL
 );
+
+### 3. Fetch & Process FMI Weather Data
+
+- Retrieves real-time **temperature, wind speed, cloudiness, and precipitation** from the **FMI API**.
+- Handles **missing values** (`None` → `0.0` for precipitation).
+- Stores data **only for known stations**, ensuring referential integrity.
+
+### 4. Insert Data into SQLite3
+
+- Ensures **no duplicate timestamps** using `INSERT OR IGNORE`.
+- Handles **missing values gracefully**.
+- Optimizes **performance using WAL mode**.
+
+#### Example Data Insert:
+```sql
+INSERT OR IGNORE INTO WeatherTimestamps (station_id, timestamp)
+VALUES (101, '2025-03-13 14:00:00');
+
+### 5. Query & Display Data
+
+- Uses **tabulate** to present query results in a **structured format**.
+- Prints tables such as **Locations, WeatherTimestamps, and Readings**.
+
+#### Example Query to View Recent Observations:
+```sql
+SELECT WT.timestamp, L.station_name, T.temperature, W.wind_speed, C.cloud_coverage, P.precipitation
+FROM WeatherTimestamps WT
+JOIN Locations L ON WT.station_id = L.station_id
+LEFT JOIN TemperatureReadings T ON WT.timestamp_id = T.timestamp_id
+LEFT JOIN WindReadings W ON WT.timestamp_id = W.timestamp_id
+LEFT JOIN CloudinessReadings C ON WT.timestamp_id = C.timestamp_id
+LEFT JOIN PrecipitationReadings P ON WT.timestamp_id = P.timestamp_id
+ORDER BY WT.timestamp DESC LIMIT 5;
