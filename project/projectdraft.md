@@ -22,7 +22,7 @@ By completing this assignment, students will:
 
 ## 📁 Project Workflow
 
-### 1️⃣ Create a SQLite3 Database
+### 1. Create a SQLite3 Database
 The database contains **six normalized tables**:
 
 | Table Name               | Description |
@@ -36,7 +36,7 @@ The database contains **six normalized tables**:
 
 ---
 
-### 2️⃣ Fetch FMI Weather Stations
+### 2. Fetch FMI Weather Stations
 - Uses the **FMI API** to retrieve station metadata:
   - **Station ID**
   - **Station Name**
@@ -50,7 +50,7 @@ CREATE TABLE Locations (
     station_name TEXT UNIQUE NOT NULL,
     latitude REAL NOT NULL,
     longitude REAL NOT NULL
-);
+);```
 
 ### 3. Fetch & Process FMI Weather Data
 
