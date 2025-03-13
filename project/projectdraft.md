@@ -50,7 +50,8 @@ CREATE TABLE Locations (
     station_name TEXT UNIQUE NOT NULL,
     latitude REAL NOT NULL,
     longitude REAL NOT NULL
-);```
+);
+```
 
 ### 3. Fetch & Process FMI Weather Data
 
