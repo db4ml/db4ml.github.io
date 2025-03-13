@@ -68,7 +68,8 @@ CREATE TABLE Locations (
 #### Example Data Insert:
 ```sql
 INSERT OR IGNORE INTO WeatherTimestamps (station_id, timestamp)
-VALUES (101, '2025-03-13 14:00:00');'```
+VALUES (101, '2025-03-13 14:00:00');'
+```
 
 ### 5. Query & Display Data
 
@@ -85,3 +86,4 @@ LEFT JOIN WindReadings W ON WT.timestamp_id = W.timestamp_id
 LEFT JOIN CloudinessReadings C ON WT.timestamp_id = C.timestamp_id
 LEFT JOIN PrecipitationReadings P ON WT.timestamp_id = P.timestamp_id
 ORDER BY WT.timestamp DESC LIMIT 5;
+```
