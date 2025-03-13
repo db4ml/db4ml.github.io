@@ -67,7 +67,7 @@ CREATE TABLE Locations (
 #### Example Data Insert:
 ```sql
 INSERT OR IGNORE INTO WeatherTimestamps (station_id, timestamp)
-VALUES (101, '2025-03-13 14:00:00');
+VALUES (101, '2025-03-13 14:00:00');'```
 
 ### 5. Query & Display Data
 
